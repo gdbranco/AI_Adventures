@@ -48,5 +48,5 @@ if __name__ == "__main__":
             last_p3 = copy(p3)
             last_p4 = copy(p4)
         i+=1
-        # pygame.image.save(screen,"./tmp/screenshot{}.jpg".format(i))
+        pygame.image.save(screen,"./tmp/screenshot{}.jpg".format(i))
         pygame.display.update()

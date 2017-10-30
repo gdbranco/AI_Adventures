@@ -9,9 +9,13 @@ class Point(object):
         self.bias = 1
         self.label = 1 if self.y > f(self.x) else -1
     def __eq__(self, other):
-        if(isinstance(other,Point)):
+        if(isinstance(other,self.__class__)):
             return True if self.x == other.x and self.y == other.y else False
-        return False
+        return NotImplemented
+    def __ne__(self, other):
+        if(isinstance(other, self.__class__)):
+            return not self.__eq__(other)
+        return NotImplemented
     def __str__(self):
         return "{},{}".format(self.pixelX(),self.pixelY())
     def pixelX(self):

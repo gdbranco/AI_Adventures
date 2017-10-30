@@ -15,7 +15,7 @@ def genGIF(tmp_dir, dir_OUT):
         filenames = os.listdir(tmp_dir)
         for item in filenames:
             im = Image.open(tmp_dir + item)
-            imResize = im.resize((int(im.size[0]),int(im.size[1])), Image.ANTIALIAS)
+            imResize = im.resize((int(im.size[0]/2),int(im.size[1]/2)), Image.ANTIALIAS)
             imResize.save(tmp_dir + item,'JPEG', quality=100)
         # filenames.sort(key= lambda x: float(x.strip('.jpeg')))
         images = []

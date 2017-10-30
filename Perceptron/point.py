@@ -8,6 +8,10 @@ class Point(object):
         self.y = random.uniform(-1, 1) if pos is None else pos[1]
         self.bias = 1
         self.label = 1 if self.y > f(self.x) else -1
+    def __eq__(self, other):
+        if(isinstance(other,Point)):
+            return True if self.x == other.x and self.y == other.y else False
+        return False
     def __str__(self):
         return "{},{}".format(self.pixelX(),self.pixelY())
     def pixelX(self):
